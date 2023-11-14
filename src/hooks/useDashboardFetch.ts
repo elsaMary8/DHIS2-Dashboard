@@ -11,7 +11,6 @@ const useDashboardFetch = () => {
             dashboards?: Dashboard[]
         }) => {
             if (data && data.dashboards) {
-                console.log('dashboards are', data.dashboards);
                 setDashboards(data.dashboards)
             }
         })

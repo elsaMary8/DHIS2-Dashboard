@@ -7,20 +7,21 @@ const useDashboardDetailsFetch = (dropDown: boolean, id: string, starred: boolea
     const [toggle, setToggle] = useState(starred);
 
     const toggleHandler = () => {
-        console.log('Toggled handler running');
         setToggle(!toggle);
+        localStorage.setItem(id, !toggle ? '1' : '0');
     }
 
     useEffect(() => {
+        const starredState = localStorage.getItem(id) === '1';
+        setToggle(starredState || starred);
         if (dropDown && details === undefined) {
             fetchDashboardDetails(id).then((data: DashboardDetailResponse) => {
                 if (data && data.dashboardItems) {
-                    console.log(`Details are fetched with ${id} :`, data);
                     setDetails(data.dashboardItems);
                 }
             })
         }
-    }, [details, dropDown, id]);
+    }, [details, dropDown, id, starred]);
 
     return {details, toggleHandler, toggle}
 }

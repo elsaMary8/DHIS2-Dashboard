@@ -32,7 +32,6 @@ function App() {
                 <Divider dense/>
                 {dashboards &&
                     dashboards.map((value, index) => {
-                        console.log('The fetched dashboards are', value);
                         return <DashboardCard key={index} initial={index === 0} dashboardItem={value}
                                               selectedItem={selectedItem}/>
                     })
