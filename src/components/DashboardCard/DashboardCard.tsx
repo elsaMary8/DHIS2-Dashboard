@@ -23,7 +23,8 @@ const DashboardCard = ({initial, selectedItem, dashboardItem: {displayName, id, 
     }
 
     return (
-        <div style={{marginBottom: '16px'}}>
+        <div
+            style={{marginBottom: '16px'}}>
             <Card>
                 <div style={{
                     display: 'flex',

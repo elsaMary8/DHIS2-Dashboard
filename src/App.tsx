@@ -7,7 +7,8 @@ import useDashboardFetch from "./hooks/useDashboardFetch.ts";
 
 const containerStyles = {
     display: 'flex',
-    height: '100vh',
+    flex: 1,
+    minHeight: '100vh',
     alignItems: 'flex-start',
     justifyContent: 'center',
     background: colors.grey100,
