@@ -1,4 +1,4 @@
-# DHIS2 Challenge (Option 2)
+# DHIS2 Dashboard
 
 <img alt="dashboard"  src="screenshots/dashboard.png" width="450"/>
 
@@ -16,9 +16,9 @@
 
 ```shell
 # Clone project:
- `git clone https://github.com/athul173/dhis2-challenge.git`
+ `git clone https://github.com/elsaMary8/DHIS2-Dashboard.git`
 # Install all packages and dependencies:
-   `cd dhis2-challenge`
+   `cd DHIS2-Dashboard`
 # Install dependencies:
    `yarn`
 # Start local server with hot reloading
