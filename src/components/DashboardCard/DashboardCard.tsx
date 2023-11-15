@@ -1,4 +1,3 @@
-import {useState} from "react";
 import {Card} from '@dhis2-ui/card'
 import {MenuItem} from '@dhis2-ui/menu'
 import {IconChevronDown24, IconChevronUp24, IconStar24, IconStarFilled24} from '@dhis2/ui-icons'
@@ -14,13 +13,7 @@ interface DashboardCard {
 
 const DashboardCard = ({initial, selectedItem, dashboardItem: {displayName, id, starred}}: DashboardCard) => {
 
-    const [dropDown, setDropDown] = useState(initial);
-
-    const {details, toggle, toggleHandler} = useDashboardDetailsFetch(dropDown, id, starred);
-
-    const dropDownHandler = () => {
-        setDropDown(!dropDown);
-    }
+    const {details, toggle, dropDown, toggleHandler, dropDownHandler} = useDashboardDetailsFetch(initial, id, starred);
 
     return (
         <div

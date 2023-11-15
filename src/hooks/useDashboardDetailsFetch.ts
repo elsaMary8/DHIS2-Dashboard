@@ -2,13 +2,18 @@ import {useEffect, useState} from "react";
 import fetchDashboardDetails from "../utils/network/fetchDashboardDetails.ts";
 import {DashboardDetailResponse, DashboardItem} from "../types/DashboardResponse.ts";
 
-const useDashboardDetailsFetch = (dropDown: boolean, id: string, starred: boolean) => {
+const useDashboardDetailsFetch = (initial: boolean, id: string, starred: boolean) => {
     const [details, setDetails] = useState<undefined | DashboardItem[]>();
     const [toggle, setToggle] = useState(starred);
+    const [dropDown, setDropDown] = useState(initial);
 
     const toggleHandler = () => {
         setToggle(!toggle);
         localStorage.setItem(id, !toggle ? '1' : '0');
+    }
+
+    const dropDownHandler = () => {
+        setDropDown(!dropDown);
     }
 
     useEffect(() => {
@@ -23,7 +28,7 @@ const useDashboardDetailsFetch = (dropDown: boolean, id: string, starred: boolea
         }
     }, [details, dropDown, id, starred]);
 
-    return {details, toggleHandler, toggle}
+    return {details, toggleHandler, toggle,dropDown, dropDownHandler}
 }
 
 export default useDashboardDetailsFetch;

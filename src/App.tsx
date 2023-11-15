@@ -1,6 +1,5 @@
 import {Divider} from '@dhis2-ui/divider'
 import {colors} from '@dhis2/ui-constants'
-import {useState} from "react";
 import HeaderContainer from "./components/HeaderContainer";
 import DashboardCard from "./components/DashboardCard";
 import useDashboardFetch from "./hooks/useDashboardFetch.ts";
@@ -16,15 +15,7 @@ const containerStyles = {
 
 function App() {
 
-    const [selectedItem, setSelectedItem] = useState('All types');
-
-    const {dashboards} = useDashboardFetch();
-
-    const onChangeHandler = (item: {
-        selected: string
-    }) => {
-        setSelectedItem(item.selected);
-    };
+    const {dashboards, onChangeHandler, selectedItem} = useDashboardFetch();
 
     return (
         <div style={containerStyles}>

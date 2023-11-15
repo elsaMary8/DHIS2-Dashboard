@@ -5,6 +5,13 @@ import {Dashboard} from "../types/Dashboard.ts";
 const useDashboardFetch = () => {
 
     const [dashboards, setDashboards] = useState<Dashboard[] | undefined>();
+    const [selectedItem, setSelectedItem] = useState('All types');
+
+    const onChangeHandler = (item: {
+        selected: string
+    }) => {
+        setSelectedItem(item.selected);
+    };
 
     useEffect(() => {
         fetchDashboards().then((data: {
@@ -16,7 +23,7 @@ const useDashboardFetch = () => {
         })
     }, []);
 
-    return {dashboards}
+    return {dashboards, onChangeHandler, selectedItem}
 }
 
 export default useDashboardFetch;
