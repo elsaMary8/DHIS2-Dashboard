@@ -1,5 +1,7 @@
 # DHIS2 Challenge (Option 2)
 
+<img alt="dashboard"  src="screenshots/dashboard.png" width="450"/>
+
 ### Tech
 
 - Build tool : [Vite](https://vitejs.dev/guide/)
