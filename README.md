@@ -10,7 +10,7 @@
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 - UI library : [DHIS2 UI Library](https://ui.dhis2.nu/)
 
-#### [Deployment](https://dhis2-challenge2.netlify.app/)
+### [Open production deployment](https://dhis2-challenge2.netlify.app/)
 
 ### Getting started
 
